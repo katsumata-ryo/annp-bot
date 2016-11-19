@@ -6,11 +6,11 @@ module Lita
       route /cafe/, :cafe
 
       RESTRANTS = [
-        { name: "店舗1", tabelog: "https://tabelog.com/kanagawa/A1405/A140507/14000813/", genre: "和食", tags: []},
-        { name: "店舗2", tabelog: "https://tabelog.com/kanagawa/A1405/A140507/14000813/", genre: "洋食", tags: []},
-        { name: "店舗3", tabelog: "https://tabelog.com/kanagawa/A1405/A140507/14000813/", genre: "イタリアン", tags: []},
-        { name: "店舗4", tabelog: "https://tabelog.com/kanagawa/A1405/A140507/14000813/", genre: "ラーメン", tags: []},
-        { name: "店舗5", tabelog: "https://tabelog.com/kanagawa/A1405/A140507/14000813/", genre: "コンビニ", tags: []},
+        { name: "吉成", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13032711/", genre: "和食", tags: []},
+        { name: "おまかせ亭", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13007048/", genre: "洋食", tags: []},
+        { name: "WINE & GRILL TACT", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13193233/", genre: "イタリアン", tags: []},
+        { name: "麺屋 たけいち 渋谷邸", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13175067/", genre: "ラーメン", tags: []},
+        { name: "ナチュラルローソン", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13165025/", genre: "コンビニ", tags: []},
       ].freeze
 
       CAFE = [
@@ -24,7 +24,7 @@ module Lita
         { name: "スターバックス 御成町", tabelog: "https://tabelog.com/kanagawa/A1404/A140402/14003447/", genre: "kamakura", tags: [] },
         { name: "SJO COFFEE", tabelog: "https://tabelog.com/kanagawa/A1404/A140402/14055444/", genre: "kamakura", tags: [] },
         { name: "Branch Kitchen", tabelog: "https://tabelog.com/kanagawa/A1404/A140402/14050545/", genre: "yokohama", tags: [] },
-      ]
+      ].freeze
 
       def lunch(response)
         recommend = RESTRANTS.sample
