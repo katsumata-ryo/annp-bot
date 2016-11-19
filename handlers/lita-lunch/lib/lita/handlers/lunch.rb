@@ -1,9 +1,7 @@
 module Lita
   module Handlers
     class Lunch < Handler
-      # insert handler code here
       route /lunch/, :lunch
-      route /cafe/, :cafe
 
       RESTRANTS = [
         { name: "吉成", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13032711/", genre: "和食", tags: []},
@@ -12,6 +10,23 @@ module Lita
         { name: "麺屋 たけいち 渋谷邸", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13175067/", genre: "ラーメン", tags: []},
         { name: "ナチュラルローソン", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13165025/", genre: "コンビニ", tags: []},
       ].freeze
+
+      def lunch(response)
+        recommend = RESTRANTS.sample
+        response.reply("
+          #{recommend[:name]} とかどうでしょう？
+          -----
+          食べログ: #{recommend[:tabelog]}
+          ジャンル: #{recommend[:genre]}
+          -----
+        ")
+      end
+
+      Lita.register_handler(self)
+    end
+
+    class Lunch < Handler
+      route /cafe/, :cafe
 
       CAFE = [
         { name: "Orientar Cafe", tabelog: "https://tabelog.com/kanagawa/A1401/A140101/14003211/", genre: "yokohama", tags: [] },
@@ -25,17 +40,6 @@ module Lita
         { name: "SJO COFFEE", tabelog: "https://tabelog.com/kanagawa/A1404/A140402/14055444/", genre: "kamakura", tags: [] },
         { name: "Branch Kitchen", tabelog: "https://tabelog.com/kanagawa/A1404/A140402/14050545/", genre: "yokohama", tags: [] },
       ].freeze
-
-      def lunch(response)
-        recommend = RESTRANTS.sample
-        response.reply("
-          #{recommend[:name]} とかどうでしょう？
-          -----
-          食べログ: #{recommend[:tabelog]}
-          ジャンル: #{recommend[:genre]}
-          -----
-        ")
-      end
 
       def cafe
         recommend = CAFE.sample
