@@ -1,7 +1,7 @@
 module Lita
   module Handlers
     class Lunch < Handler
-      route /^lita\slunch(?:$|\s(.{1,}))/, :lunch
+      route /^lunch(?:$|\s(.{1,}))/, :lunch
 
       RESTRANTS = [
         { name: "吉成", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13032711/", genre: "和食", tags: []},
