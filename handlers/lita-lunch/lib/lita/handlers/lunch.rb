@@ -1,7 +1,13 @@
 module Lita
   module Handlers
     class Lunch < Handler
-      route /^lunch(?:$|\s(.{1,}))/, :lunch
+      route(/^lunch(?:$|\s(.{1,}))/,
+        :lunch,
+        help: {
+          "lunch"  => "登録されているリストからお店を選びます",
+          "lunch GENRE" => "ジャンルに当てはまるお店を選びます(和食/洋食/中華/イタリアン/アジアン/カフェのどれか)"
+        }
+      )
 
       RESTRANTS = [
         { name: "吉成", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13032711/", genre: ["和食"], fee: 1200, comment: '今日は魚　身体が魚を欲している時に言って下さい'},
