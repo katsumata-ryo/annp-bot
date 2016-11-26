@@ -59,9 +59,7 @@ module Lita
       ].freeze
 
       def lunch(response)
-        p response.matches
         if response.matches[0][0]
-          p response.matches[0][0]
           restrants = RESTRANTS.map{ |restrant| restrant if restrant[:genre].include?(response.matches[0][0]) }.compact
           if restrants.length != 0
             recommend = restrants.sample
