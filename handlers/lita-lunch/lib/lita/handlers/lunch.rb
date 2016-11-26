@@ -1,6 +1,13 @@
 module Lita
   module Handlers
     class Lunch < Handler
+      route(
+        /^lunch\sall/,
+        :all,
+        help: {
+          "lunch all" => "ランチ登録されているすべてのお店を表示"
+        }
+      )
       route(/^lunch(?:$|\s(.{1,}))/,
         :lunch,
         help: {
@@ -59,9 +66,9 @@ module Lita
       ].freeze
 
       def lunch(response)
-        p response.matches
+        return if response.matches[0][0] == 'all'
+
         if response.matches[0][0]
-          p response.matches[0][0]
           restrants = RESTRANTS.map{ |restrant| restrant if restrant[:genre].include?(response.matches[0][0]) }.compact
           if restrants.length != 0
             recommend = restrants.sample
@@ -82,6 +89,11 @@ module Lita
           コメント: #{recommend[:comment]}
           -----
         ")
+      end
+
+      def all(response)
+        all_restrant_name = RESTRANTS.map{ |restrant| "#{restrant[:name]}: #{restrant[:genre]}" }.join("\n")
+        response.reply(all_restrant_name)
       end
 
       Lita.register_handler(self)
