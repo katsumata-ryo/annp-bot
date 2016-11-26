@@ -106,11 +106,6 @@ module Lita
         response.reply(all_restrant_name)
       end
 
-      def all(response)
-        all_restrant_name = RESTRANTS.map{ |restrant| "#{restrant[:name]}: #{restrant[:genre]}" }.join("\n")
-        response.reply(all_restrant_name)
-      end
-
       Lita.register_handler(self)
     end
   end
