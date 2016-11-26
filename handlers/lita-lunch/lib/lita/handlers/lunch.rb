@@ -12,30 +12,19 @@ module Lita
         { name: "ほの字", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13007031/", genre: "定食", fee: 1, comment: 'test comment'},
         { name: "BISTRO DE まいど", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13013705/", genre: "洋食", fee: 1, comment: 'test comment'},
       ].freeze
-      #
-      # CAFE = [
-      #   { name: "Orientar Cafe", tabelog: "https://tabelog.com/kanagawa/A1401/A140101/14003211/", genre: "yokohama", tags: [] },
-      #   { name: "Gingers Beach", tabelog: "https://tabelog.com/kanagawa/A1401/A140212/14014714/", genre: "yokohama", tags: [] },
-      #   { name: "Lu's Cafe", tabelog: "https://tabelog.com/kanagawa/A1401/A140101/14003371/", genre: "yokohama", tags: [] },
-      #   { name: "Roku Cafe", tabelog: "https://tabelog.com/kanagawa/A1401/A140101/14011201/", genre: "yokohama", tags: [] },
-      #   { name: "24/7 restrant", tabelog: "https://tabelog.com/kanagawa/A1401/A140103/14044853/", genre: "yokohama", tags: [] },
-      #   { name: "BUKATSUDO", tabelog: "https://tabelog.com/kanagawa/A1401/A140103/14056122/", genre: "yokohama", tags: [] },
-      #   { name: "Clever Cafe", tabelog: "https://tabelog.com/kanagawa/A1401/A140102/14051539/", genre: "yokohama", tags: [] },
-      #   { name: "スターバックス 御成町", tabelog: "https://tabelog.com/kanagawa/A1404/A140402/14003447/", genre: "kamakura", tags: [] },
-      #   { name: "SJO COFFEE", tabelog: "https://tabelog.com/kanagawa/A1404/A140402/14055444/", genre: "kamakura", tags: [] },
-      #   { name: "Branch Kitchen", tabelog: "https://tabelog.com/kanagawa/A1404/A140402/14050545/", genre: "yokohama", tags: [] },
-      # ].freeze
 
       def lunch(response)
         p response.matches
-        case response.matches[0][0]
-        # when 'cafe'
-        #   recommend = CAFE.sample
-        when nil
-          recommend = RESTRANTS.sample
+        if response.matches[0][0]
+          restrants = RESTRANTS.map{|restrant| restrant if restrant[:genre] == response.matches[0][0] }.compact
+          if restrants.length != 0
+            recommend = restrants.sample
+          else
+            response.reply("そのデータはないっぽいです")
+            return
+          end
         else
-          response.reply("それはない")
-          return
+          recommend = RESTRANTS.sample
         end
 
         response.reply("
