@@ -73,22 +73,37 @@ module Lita
           if restrants.length != 0
             recommend = restrants.sample
           else
-            response.reply("それはないみたいな。 和食/洋食/中華/イタリアン/アジアン/カフェ から選んでみて :pizza: \n入力例: > lunch カフェ")
+            help_message = (
+              "そのジャンルはないみたい。
+              　　和食(和定食・お寿司・蕎麦・うどん など)
+              　　洋食(ハンバーガー・ハンバーグ・カレー など)
+              　　中華(中華・ラーメン など)
+              　　イタリアン(パスタ・ピザ など)
+              　　アジアン(タイ・ベトナム・メキシコ・韓国 など)
+              　　カフェ(コーヒー など)
+              から選んでみて:pizza: \n入力例:　lunch　カフェ"
+            ).gsub(' ', '')
+            response.reply(help_message)
             return
           end
         else
           recommend = RESTRANTS.sample
         end
 
-        response.reply("
-          「#{recommend[:name]}」とかどうでしょう？
+        message = (
+          "「#{recommend[:name]}」とかどうでしょう:question:
           -----
           URL: #{recommend[:url]}
           ジャンル: #{recommend[:genre].join('/')}
           価格目安: #{recommend[:fee]}
           コメント: #{recommend[:comment]}
-          -----
-        ")
+          -----").gsub(' ', '')
+        response.reply(message)
+      end
+
+      def all(response)
+        all_restrant_name = RESTRANTS.map{ |restrant| "#{restrant[:name]}: #{restrant[:genre]}" }.join("\n")
+        response.reply(all_restrant_name)
       end
 
       def all(response)
