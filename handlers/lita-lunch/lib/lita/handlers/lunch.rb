@@ -9,6 +9,8 @@ module Lita
         { name: "WINE & GRILL TACT", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13193233/", genre: "イタリアン", tags: []},
         { name: "麺屋 たけいち 渋谷邸", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13175067/", genre: "ラーメン", tags: []},
         { name: "ナチュラルローソン", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13165025/", genre: "コンビニ", tags: []},
+        { name: "ほの字", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13007031/", genre: "定食", tags: []},
+        { name: "BISTRO DE まいど", tabelog: "https://tabelog.com/tokyo/A1303/A130301/13013705/", genre: "洋食", tags: []},
       ].freeze
 
       CAFE = [
