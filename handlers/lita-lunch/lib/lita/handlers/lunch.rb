@@ -44,7 +44,7 @@ module Lita
           食べログ: #{recommend[:tabelog]}
           ジャンル: #{recommend[:genre]}
           価格目安: #{recommend[:fee]}
-          コメント: #{recomment[:comment]}
+          コメント: #{recommend[:comment]}
           -----
         ")
       end
