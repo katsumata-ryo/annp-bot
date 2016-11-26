@@ -38,9 +38,18 @@ module Lita
         { name: "revive kitchen", url: "https://tabelog.com/tokyo/A1306/A130601/13161158/", genre: ["カフェ"], fee:1100 , comment: 'いわゆるおしゃれなお店　グルテンフリーのパスタがなんたらかんたら'},
         { name: "サンマルクカフェ", url: "https://tabelog.com/tokyo/A1306/A130602/13152492/", genre: ["カフェ"], fee:500 , comment: 'チョコクロおいしい'},
         { name: "パン・オ・スリール", url: "https://tabelog.com/tokyo/A1306/A130602/13147336/", genre: ["カフェ"], fee:1000 , comment: '美味しいパンで作るサンドイッチ・フレンチトースト　軽食でいいかなって時に'},
-        { name: "寿司酒場 おもてなし", url: "https://tabelog.com/tokyo/A1303/A130301/13199419/", genre: ["和食"], fee:1000 , comment: '実は近くでお寿司が食べれる　丼もあるよ'},
+        { name: "寿司酒場 おもてなし", url: "https://tabelog.com/tokyo/A1303/A130301/13199419/", genre: ["和食"], fee:1100 , comment: 'オープン記念の丼物がコスパよし。ランチはお寿司と丼。'},
         { name: "TINTO COFFIEE", url: "https://tabelog.com/tokyo/A1303/A130301/13192788/", genre: ["カフェ"], fee:400 , comment: '目さまして'},
-        { name: "おなかなんて空いてない", url: "http://tiqav.com/3yJ.png", genre: ["ダイエット"], fee:0 , comment: '悟り…'},
+        { name: "凛", url: "https://tabelog.com/tokyo/A1303/A130301/13110872/", genre: ["和食"], fee:1100 , comment: 'ネギトロごはんセットの良さがある'},
+        { name: "俺流塩らーめん", url: "https://tabelog.com/tokyo/A1306/A130601/13163615/", genre: ["中華"], fee:700 , comment: 'コスパ良いけど遠い。店員さん元気'},
+        { name: "HUIT", url: "https://tabelog.com/tokyo/A1303/A130301/13121381/", genre: ["カフェ"], fee:1080 , comment: 'おしゃれなカフェ好きが好きそうなカフェ'},
+        { name: "雷庵", url: "https://tabelog.com/tokyo/A1303/A130301/13193603/", genre: ["和食"], fee:1300 , comment: '蕎麦も美味しいけど前菜に良さがある。高い'},
+        { name: "un cafe", url: "https://tabelog.com/tokyo/A1306/A130602/13004732/", genre: ["イタリアン","カフェ"], fee:1150 , comment: 'おしゃれ　５種類のランチメニューがある'},
+        { name: "寿司の　いく味", url: "https://tabelog.com/tokyo/A1303/A130301/13151605/", genre: ["和食"], fee:1100 , comment: '丼セットのお得感　焼き魚もついてくる'},
+        { name: "鶏味座屋台", url: "https://tabelog.com/tokyo/A1303/A130301/13150523/", genre: ["和食"], fee:1080 , comment: '親子丼！わかしゃも！'},
+        { name: "HOHO'S CURRY KITCHEN", url: "https://tabelog.com/tokyo/A1303/A130301/13170264/", genre: ["洋食"], fee:1200 , comment: '欧風カレーが食べたい時に'},
+        { name: "澤乃井", url: "https://tabelog.com/tokyo/A1303/A130301/13001352/", genre: ["和食"], fee:950 , comment: 'うどん・そばどっちもあるよ　近いよ'},
+
       ].freeze
 
       def lunch(response)
