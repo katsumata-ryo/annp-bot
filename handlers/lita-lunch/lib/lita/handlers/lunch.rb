@@ -16,11 +16,12 @@ module Lita
       def lunch(response)
         p response.matches
         if response.matches[0][0]
-          restrants = RESTRANTS.map{|restrant| restrant if restrant[:genre] == response.matches[0][0] }.compact
+          p response.matches[0][0]
+          restrants = RESTRANTS.map{ |restrant| restrant if restrant[:genre].include?(response.matches[0][0]) }.compact
           if restrants.length != 0
             recommend = restrants.sample
           else
-            response.reply("そのデータはないっぽいです")
+            response.reply("それはないみたいな。 和食/洋食/中華/イタリアン/アジアン/カフェ から選んでみて :pizza: \n入力例: > lunch カフェ")
             return
           end
         else
@@ -31,7 +32,7 @@ module Lita
           「#{recommend[:name]}」とかどうでしょう？
           -----
           食べログ: #{recommend[:tabelog]}
-          ジャンル: #{recommend[:genre]}
+          ジャンル: #{recommend[:genre].join('/')}
           価格目安: #{recommend[:fee]}
           コメント: #{recommend[:comment]}
           -----
