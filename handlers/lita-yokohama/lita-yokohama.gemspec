@@ -1,10 +1,10 @@
 Gem::Specification.new do |spec|
-  spec.name          = "lita-lunch"
+  spec.name          = "lita-yokohama"
   spec.version       = "0.1.0"
   spec.authors       = ["Katsumata Ryo"]
   spec.email         = ["ktmt.ryo@gmail.com"]
-  spec.description   = "ランチ情報をおすすめしてくれます"
-  spec.summary       = "ランチ情報をおすすめしてくれます"
+  spec.description   = "横浜情報をおすすめしてくれます"
+  spec.summary       = "横浜情報をおすすめしてくれます"
   spec.homepage      = "https://github.com/katsumata-ryo/"
   spec.license       = ""
   spec.metadata      = { "lita_plugin_type" => "handler" }

@@ -1,13 +1,13 @@
-# lita-lunch
+# lita-yokohama
 
 TODO: Add a description of the plugin.
 
 ## Installation
 
-Add lita-lunch to your Lita instance's Gemfile:
+Add lita-yokohama to your Lita instance's Gemfile:
 
 ``` ruby
-gem "lita-lunch"
+gem "lita-yokohama"
 ```
 
 ## Configuration
